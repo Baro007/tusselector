@@ -59,7 +59,7 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 
 ## 👥 Katkıda Bulunanlar
 
-- [Adınız](https://github.com/kullaniciadi) - Geliştirici
+- [Baro007](https://github.com/kullaniciadi) - Geliştirici
 
 ## 📞 İletişim
 
