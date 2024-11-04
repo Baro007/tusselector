@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+  --color-secondary: #6366f1;
+  --color-accent: #10b981;
+  --color-background: #f8fafc;
+  --color-foreground: #ffffff;
+  --color-text: #1e293b;
+  --color-text-light: #64748b;
+  --color-border: #e2e8f0;
+  --color-error: #ef4444;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-background to-gray-100 text-text antialiased min-h-screen;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  /* Card Styles */
+  .card {
+    @apply bg-foreground rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl;
+  }
+
+  .card-hover {
+    @apply hover:scale-[1.02] hover:ring-2 hover:ring-primary hover:ring-opacity-20;
+  }
+
+  /* Button Styles */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-light focus:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90 focus:ring-secondary;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-primary;
+  }
+
+  /* Input Styles */
+  .input {
+    @apply w-full rounded-lg border border-border bg-foreground px-4 py-3 text-text
+           focus:outline-none focus:ring-2 focus:ring-opacity-20 focus:ring-primary focus:border-primary
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Progress Bar */
+  .progress-bar {
+    @apply h-2 w-full bg-gray-100 rounded-full overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply h-full bg-primary transition-all duration-500 ease-out;
+  }
+
+  /* Question Card */
+  .question-card {
+    @apply card p-6 space-y-6;
+  }
+
+  .question-option {
+    @apply btn w-full justify-between text-left hover:bg-primary hover:bg-opacity-5 
+           data-[selected=true]:bg-primary data-[selected=true]:text-white;
+  }
+
+  /* Results Section */
+  .specialty-card {
+    @apply card p-6 relative overflow-hidden;
+  }
+
+  .specialty-badge {
+    @apply absolute top-0 right-0 w-32 h-32 overflow-hidden;
+  }
+
+  .specialty-badge-text {
+    @apply absolute transform rotate-45 bg-primary text-white text-sm py-1 right-[-35px] top-[32px] w-[170px] text-center;
+  }
+
+  /* Animations */
+  .fade-in {
+    @apply animate-[fadeIn_0.5s_ease-out];
+  }
+
+  .slide-up {
+    @apply animate-[slideUp_0.5s_ease-out];
+  }
+
+  .slide-in {
+    @apply animate-[slideIn_0.5s_ease-out];
+  }
+
+  /* Loading States */
+  .loading-skeleton {
+    @apply animate-pulse bg-gray-200 rounded;
+  }
+
+  /* Tooltips */
+  .tooltip {
+    @apply invisible absolute z-50 px-3 py-2 text-sm text-white bg-gray-900 rounded-lg opacity-0 transition-all duration-200;
+  }
+
+  .has-tooltip:hover .tooltip {
+    @apply visible opacity-100;
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #0000FF;
+    --color-secondary: #800080;
+    --color-accent: #008000;
+    --color-text: #000000;
+    --color-background: #FFFFFF;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

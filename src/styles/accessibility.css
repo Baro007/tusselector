@@ -1,0 +1,76 @@
+/* Yüksek Kontrast Tema */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #0000FF;
+    --color-secondary: #800080;
+    --color-accent: #008000;
+    --color-background: #FFFFFF;
+    --color-text: #000000;
+    --color-border: #000000;
+  }
+
+  .text-gray-600 {
+    color: #000000 !important;
+  }
+
+  .bg-gray-100 {
+    background-color: #E5E5E5 !important;
+  }
+
+  .border {
+    border-width: 2px !important;
+  }
+
+  .focus-visible {
+    outline: 3px solid #000000 !important;
+    outline-offset: 2px !important;
+  }
+}
+
+/* Hareket Azaltılmış Mod */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ekran Okuyucu İyileştirmeleri */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus Göstergeleri */
+:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Klavye Navigasyon İpuçları */
+[data-keyboard-hint]:focus::after {
+  content: attr(data-keyboard-hint);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000000;
+  color: #FFFFFF;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
