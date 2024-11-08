@@ -1,5 +1,7 @@
 # 🎓 Tıpta Uzmanlık Alanı Bulucu
 
+Demo: https://cerulean-mandazi-751157.netlify.app.
+
 Tıp öğrencileri ve mezunları için kişiselleştirilmiş uzmanlık alanı önerme sistemi. Kapsamlı bir değerlendirme ile size en uygun tıpta uzmanlık alanlarını belirler.
 
 ![Uzmanlık Alanı Bulucu](https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=2000)
